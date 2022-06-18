@@ -111,3 +111,7 @@ p {
   color: #FFF;
   display: flexbox;
 }
+
+label {
+  pointer-events:none;
+}

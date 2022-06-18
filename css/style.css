@@ -132,4 +132,8 @@ p {
   color: #FFF;
   display: flexbox;
 }
+
+label {
+  pointer-events: none;
+}
 /*# sourceMappingURL=style.css.map */
