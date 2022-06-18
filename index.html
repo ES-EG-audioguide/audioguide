@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="utf-8">
-        <title> Audioguide </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/app.css" type="text/css">
-        <script src="./js/app.js" defer></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title> Audioguide </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="./js/app.js" defer></script>
+</head>
 
-    <body>
-        <main>
-            <div>
-                <input type="text" id="search" name="Search">
-            </div>
+<body>
 
-            <div id="main-content">
-                <div id="content">
-                </div>
-            </div>
-        </main>
+    <main>
 
-        <div id="templates" hidden>
-            <div id="audiosample">
-                <h3> %title </h3>
-                <audio controls>
-                    <source src="res/audio/test.aac" type="audio/aac">
-                    <source src="res/audio/test.wav" type="audio/wav">
-                Your browser does not support the audio element.
-                </audio>
+        <div class="form__group field">
+            <input type="input" class="form__field" placeholder="Name" name="name" id='search' required />
+            <label for="name" class="form__label">enter code</label>
+          </div>
+
+          <div id="main-content">
+            <div id="content">
             </div>
+        </div>
+
+    </main>
+
+    <div id="templates" hidden>
+
+        <div id="audiosample">
+            <p> %title </p>
+            <audio controls>
+                <source src="res/audio/test.aac" type="audio/aac">
+                <source src="res/audio/test.wav" type="audio/wav">
+              Your browser does not support the audio element.
+              </audio>
+            <!-- <button class='playbutton'></button> -->
         </div>
     </body>
 </html>

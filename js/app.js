@@ -5,24 +5,24 @@ const model = {
     audioMap: new Map(
         [[1234, [
             { 
-                title: 'test1.wav',
+                title: 'test1',
                 path: 'test.wav',
                 type: 'audio/wav'
             },
             { 
-                title: 'test2.wav',
+                title: 'test2',
                 path: 'test.wav',
                 type: 'audio/wav'
             },
             { 
-                title: 'help1.wav',
+                title: 'test3',
                 path: 'test.wav',
                 type: 'audio/wav'
             }]
         ], 
         [666, [
             { 
-                title: '666test1.wav',
+                title: '666',
                 path: 'test.wav',
                 type: 'audio/wav'
             }]
