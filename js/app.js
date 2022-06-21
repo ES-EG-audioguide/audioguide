@@ -1,30 +1,32 @@
 'use strict';
 
+const AUDIOPATH = './res/audio/';
+
 const model = {
 
     audioMap: new Map(
         [[1234, [
             { 
-                title: 'test1',
-                path: 'test.wav',
-                type: 'audio/wav'
+                title: 'Info Codesonne',
+                path: 'Codesonne_Info1.mp3',
+                type: 'audio/mp3'
             },
             { 
-                title: 'test2',
-                path: 'test.wav',
-                type: 'audio/wav'
+                title: 'Hinweis 1',
+                path: 'Codesonne_Tipp1.mp3',
+                type: 'audio/mp3'
             },
             { 
-                title: 'test3',
-                path: 'test.wav',
-                type: 'audio/wav'
+                title: 'Hinweis 2',
+                path: 'Codesonne_Tipp2.mp3',
+                type: 'audio/mp3'
             }]
         ], 
         [666, [
             { 
                 title: '666',
-                path: 'test.wav',
-                type: 'audio/wav'
+                path: 'test.aac',
+                type: 'audio/aac'
             }]
         ], 
     
@@ -112,6 +114,7 @@ const helper = {
         for(let sampleAttr in sample){
             temp.innerHTML = temp.innerHTML.replace("%" + sampleAttr, sample[sampleAttr]);
         }
+        temp.getElementsByTagName('audio')[0].getElementsByTagName('source')[0].src = AUDIOPATH + sample.path;
     },
 
 };
