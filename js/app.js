@@ -6,34 +6,34 @@ const model = {
 
     audioMap: new Map(
         [[1234, [
-            { 
+            {
                 title: 'Info Codesonne',
                 path: 'Codesonne_Info1.mp3',
                 type: 'audio/mp3'
             },
-            { 
+            {
                 title: 'Hinweis 1',
                 path: 'Codesonne_Tipp1.mp3',
                 type: 'audio/mp3'
             },
-            { 
+            {
                 title: 'Hinweis 2',
                 path: 'Codesonne_Tipp2.mp3',
                 type: 'audio/mp3'
             }]
-        ], 
-        [666, [
-            { 
-                title: '666',
-                path: 'test.aac',
-                type: 'audio/aac'
-            }]
-        ], 
-    
-    ]
+        ],
+            [666, [
+                {
+                    title: '666',
+                    path: 'test.aac',
+                    type: 'audio/aac'
+                }]
+            ],
+
+        ]
     ),
 
-    getAudioObj(id, callback){
+    getAudioObj(id, callback) {
         callback(this.audioMap.get(id));
     },
 };
@@ -49,13 +49,13 @@ const presenter = {
     },
 
     createAudioObj(audioObjId) {
-        model.getAudioObj(audioObjId, function(result){
+        model.getAudioObj(audioObjId, function (result) {
             let page = view.renderAudioObj(result);
             helper.replace(page);
-    })
+        })
     },
 
-    clear(){
+    clear() {
         let main = document.getElementById('content');
         let content = main.firstElementChild;
         if (content) {
@@ -82,14 +82,11 @@ const view = {
         };
 
         let page = document.createElement('div');
-        let newsTemplate = document.getElementById('audiosample').cloneNode(true);
-
         for (let sample of audioObj) {
-                let sampleTemp = newsTemplate.cloneNode(true);
-
-                helper.fillInfos(sampleTemp, sample);
-
-                page.append(sampleTemp);
+            let sampleTemp = document.getElementById('audiosample').cloneNode(true);
+            sampleTemp.removeAttribute('id');
+            helper.fillInfos(sampleTemp, sample);
+            page.append(sampleTemp);
         }
 
         page.addEventListener("click", handleEvent);
@@ -111,7 +108,7 @@ const helper = {
     },
 
     fillInfos(temp, sample) {
-        for(let sampleAttr in sample){
+        for (let sampleAttr in sample) {
             temp.innerHTML = temp.innerHTML.replace("%" + sampleAttr, sample[sampleAttr]);
         }
         temp.getElementsByTagName('audio')[0].getElementsByTagName('source')[0].src = AUDIOPATH + sample.path;
@@ -123,16 +120,15 @@ const helper = {
     window.addEventListener('DOMContentLoaded', presenter.init, false);
 })();
 
-function onSearchInputChar(){
+function onSearchInputChar() {
     let searchBar = document.getElementById("search");
     let userInput = parseInt(searchBar.value);
-    
-    if(model.audioMap.has(userInput)){
+
+    if (model.audioMap.has(userInput)) {
         presenter.createAudioObj(userInput);
         searchBar.classList.add("correctSearch");
         searchBar.classList.remove("wrongSearch");
-    }
-    else{
+    } else {
         presenter.clear();
         searchBar.classList.add("wrongSearch");
         searchBar.classList.remove("correctSearch");
