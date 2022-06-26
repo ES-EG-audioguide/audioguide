@@ -5,32 +5,128 @@ const AUDIOPATH = './res/audio/';
 const model = {
 
     audioMap: new Map(
-        [[1234, [
-            {
-                title: 'Info Codesonne',
-                path: 'Codesonne_Info1.mp3',
-                type: 'audio/mp3'
-            },
-            {
-                title: 'Hinweis 1',
-                path: 'Codesonne_Tipp1.mp3',
-                type: 'audio/mp3'
-            },
-            {
-                title: 'Hinweis 2',
-                path: 'Codesonne_Tipp2.mp3',
-                type: 'audio/mp3'
-            }]
-        ],
-            [666, [
+        [
+            ['chroma', [
+                {
+                    title: 'Info Chromatographie',
+                    path: 'Chroma/Chroma_Info.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 1',
+                    path: 'Chroma/Chroma_Tipp1.mp3',
+                    type: 'audio/mp3'
+                }]
+            ],
+            ['codesonne', [
+                {
+                    title: 'Info Codesonne',
+                    path: 'Codesonne/Codesonne_Info.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 1',
+                    path: 'Codesonne/Codesonne_Tipp1.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 2',
+                    path: 'Codesonne/Codesonne_Tipp2.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 3',
+                    path: 'Codesonne/Codesonne_Tipp3.mp3',
+                    type: 'audio/mp3'
+                }]
+            ],
+            ['sun', [
+                {
+                    title: 'SUN !!!NOCH PLATZHALTER!!!',
+                    path: 'Codesonne/Codesonne_Info1.mp3',
+                    type: 'audio/mp3'
+                }]
+            ],
+            ['graphen', [
+                {
+                    title: 'Info Graphen',
+                    path: 'Graphen/Graphen_Info.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 1',
+                    path: 'Graphen/Graphen_Tipp1.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 2',
+                    path: 'Graphen/Graphen_Tipp2.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 3',
+                    path: 'Graphen/Graphen_Tipp3.mp3',
+                    type: 'audio/mp3'
+                }]
+            ],
+            ['kombinatorik', [
+                {
+                    title: 'Info Kombinatorik',
+                    path: 'Kombinatorik/Kombinatorik_Info.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 1',
+                    path: 'Kombinatorik/Kombinatorik_Tipp1.mp3',
+                    type: 'audio/mp3'
+                }]
+            ],
+            ['strom', [
+                {
+                    title: 'Info Strom',
+                    path: 'Strom/Strom_Info.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 1',
+                    path: 'Strom/Strom_Tipp1.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 2',
+                    path: 'Strom/Strom_Tipp2.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 3',
+                    path: 'Strom/Strom_Tipp3.mp3',
+                    type: 'audio/mp3'
+                }]
+            ],
+            ['willkommen', [
+                {
+                    title: 'Willkommen',
+                    path: 'Willkommen/Willkommen_Info.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 1',
+                    path: 'Willkommen/Willkommen_Tipp1.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 2',
+                    path: 'Willkommen/Willkommen_Tipp2.mp3',
+                    type: 'audio/mp3'
+                }]
+            ],
+            ['666', [
                 {
                     title: '666',
                     path: 'test.aac',
                     type: 'audio/aac'
                 }]
-            ],
-
-        ]
+            ]]
     ),
 
     getAudioObj(id, callback) {
@@ -112,6 +208,7 @@ const helper = {
             temp.innerHTML = temp.innerHTML.replace("%" + sampleAttr, sample[sampleAttr]);
         }
         temp.getElementsByTagName('audio')[0].getElementsByTagName('source')[0].src = AUDIOPATH + sample.path;
+        temp.getElementsByTagName('audio')[0].title = sample.title;
     },
 
 };
@@ -122,7 +219,7 @@ const helper = {
 
 function onSearchInputChar() {
     let searchBar = document.getElementById("search");
-    let userInput = parseInt(searchBar.value);
+    let userInput = String(searchBar.value).toLowerCase();
 
     if (model.audioMap.has(userInput)) {
         presenter.createAudioObj(userInput);
