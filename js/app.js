@@ -6,7 +6,7 @@ const model = {
 
     audioMap: new Map(
         [
-            ['chroma', [
+            ['7160', [
                 {
                     title: 'Info Chromatographie',
                     path: 'Chroma/Chroma_Info.mp3',
@@ -18,7 +18,7 @@ const model = {
                     type: 'audio/mp3'
                 }]
             ],
-            ['codesonne', [
+            ['4206', [
                 {
                     title: 'Info Codesonne',
                     path: 'Codesonne/Codesonne_Info.mp3',
@@ -42,12 +42,12 @@ const model = {
             ],
             ['sun', [
                 {
-                    title: 'SUN !!!NOCH PLATZHALTER!!!',
-                    path: 'Codesonne/Codesonne_Info1.mp3',
+                    title: 'SUN',
+                    path: 'SUN/SUN.mp3',
                     type: 'audio/mp3'
                 }]
             ],
-            ['graphen', [
+            ['5291', [
                 {
                     title: 'Info Graphen',
                     path: 'Graphen/Graphen_Info.mp3',
@@ -69,7 +69,7 @@ const model = {
                     type: 'audio/mp3'
                 }]
             ],
-            ['kombinatorik', [
+            ['0007', [
                 {
                     title: 'Info Kombinatorik',
                     path: 'Kombinatorik/Kombinatorik_Info.mp3',
@@ -81,7 +81,7 @@ const model = {
                     type: 'audio/mp3'
                 }]
             ],
-            ['strom', [
+            ['1024', [
                 {
                     title: 'Info Strom',
                     path: 'Strom/Strom_Info.mp3',
@@ -103,7 +103,7 @@ const model = {
                     type: 'audio/mp3'
                 }]
             ],
-            ['willkommen', [
+            ['8688', [
                 {
                     title: 'Willkommen',
                     path: 'Willkommen/Willkommen_Info.mp3',
@@ -117,6 +117,29 @@ const model = {
                 {
                     title: 'Hinweis 2',
                     path: 'Willkommen/Willkommen_Tipp2.mp3',
+                    type: 'audio/mp3'
+                }]
+            ],
+            [
+                '2156', [
+                {
+                    title: 'Info Funk Frequenzen',
+                    path: 'Funk/Funk_Info.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 1',
+                    path: 'Funk/Funk_Tipp1.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 2',
+                    path: 'Funk/Funk_Tipp2.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 3',
+                    path: 'Funk/Funk_Tipp3.mp3',
                     type: 'audio/mp3'
                 }]
             ],
