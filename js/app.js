@@ -42,14 +42,14 @@ const model = {
             ],
             ['sun', [
                 {
-                    title: 'SUN',
+                    title: 'Persönliche Nachricht',
                     path: 'PW/PW.mp3',
                     type: 'audio/mp3'
                 }]
             ],
             ['438', [
                 {
-                    title: 'SUN',
+                    title: 'Persönliche Nachricht',
                     path: 'PW/PW.mp3',
                     type: 'audio/mp3'
                 }]
