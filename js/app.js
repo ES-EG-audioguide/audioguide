@@ -43,7 +43,14 @@ const model = {
             ['sun', [
                 {
                     title: 'SUN',
-                    path: 'SUN/SUN.mp3',
+                    path: 'PW/PW.mp3',
+                    type: 'audio/mp3'
+                }]
+            ],
+            ['graph', [
+                {
+                    title: 'SUN',
+                    path: 'PW/PW.mp3',
                     type: 'audio/mp3'
                 }]
             ],
