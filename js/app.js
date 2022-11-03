@@ -18,6 +18,18 @@ const model = {
                     type: 'audio/mp3'
                 }]
             ],
+            ['9342', [
+                {
+                    title: 'Info Chromatographie',
+                    path: 'Chroma/Chroma_Info.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 1',
+                    path: 'Chroma/Chroma_Tipp1.mp3',
+                    type: 'audio/mp3'
+                }]
+            ],
             ['4206', [
                 {
                     title: 'Info Codesonne',
