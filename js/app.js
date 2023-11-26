@@ -162,6 +162,29 @@ const model = {
                     type: 'audio/mp3'
                 }]
             ],
+            [
+                '3445', [
+                {
+                    title: 'Sechseckige Harmonie',
+                    path: 'Optic/Optic_Info.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 1',
+                    path: 'Optic/Optic_Tipp1.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 2',
+                    path: 'Optic/Optic_Tipp2.mp3',
+                    type: 'audio/mp3'
+                },
+                {
+                    title: 'Hinweis 3',
+                    path: 'Optic/Optic_Tipp3.mp3',
+                    type: 'audio/mp3'
+                }]
+            ],
             ['666', [
                 {
                     title: '666',
